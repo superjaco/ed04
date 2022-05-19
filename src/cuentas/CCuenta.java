@@ -1,105 +1,162 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Jacobo Adega Tivas
  */
 package cuentas;
 
 /**
  *
- * @author Jacobo Adega Rivas
+ * Clase cuenta
  */
 public class CCuenta {
 
-
+    /**
+     * Propiedades de la Clase
+     */
     protected String nombre;
+
+    /**
+     * Propiedades de la Clase
+     */
     protected String cuenta;
+
+    /**
+     * Propiedades de la Clase
+     */
     protected double saldo;
+
+    /**
+     * Propiedades de la Clase
+     */
     protected double tipoInterés;
 
-    public CCuenta()
-    {
+    /**
+     * Propiedades de la Clase
+     */
+    /**
+     * Constructor sin argumentos
+     */
+    public CCuenta() {
     }
 
-    public CCuenta(String nom, String cue, double sal, double tipo)
-    {
-        nombre =nom;
-        cuenta=cue;
-        saldo=sal;
+    /**
+     * Constructor con argumentos
+     *
+     * @param nom nombre cliente
+     * @param cue numero cuenta
+     * @param sal saldo
+     * @param tipo tipo interes
+     */
+    public CCuenta(String nom, String cue, double sal, double tipo) {
+        nombre = nom;
+        cuenta = cue;
+        saldo = sal;
     }
 
-    public double estado()
-    {
+    /**
+     * Devuelve saldo
+     *
+     * @return saldo
+     */
+    public double estado() {
         return getSaldo();
     }
 
-    public void ingresar(double cantidad) throws Exception
-    {
-        if (cantidad<0)
+    /**
+     * Método para ingresar
+     *
+     * @param cantidad ingresar
+     * @throws Exception error
+     */
+    public void ingresar(double cantidad) throws Exception {
+        if (cantidad < 0) {
             throw new Exception("No se puede ingresar una cantidad negativa");
+        }
         setSaldo(getSaldo() + cantidad);
     }
 
-    public void retirar(double cantidad) throws Exception
-    {
-        if (cantidad <= 0)
-            throw new Exception ("No se puede retirar una cantidad negativa");
-        if (estado()< cantidad)
-            throw new Exception ("No se hay suficiente saldo");
+    /**
+     * Método para retirar
+     *
+     * @param cantidad retirar
+     * @throws Exception error
+     */
+    public void retirar(double cantidad) throws Exception {
+        if (cantidad <= 0) {
+            throw new Exception("No se puede retirar una cantidad negativa");
+        }
+        if (estado() < cantidad) {
+            throw new Exception("No se hay suficiente saldo");
+        }
         setSaldo(getSaldo() - cantidad);
     }
 
     /**
-     * @return the nombre
+     * Devuelve nombre del titular
+     *
+     * @return nombre titular
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * Asigna nombre del titular
+     *
+     * @param nombre titular
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @return the cuenta
+     * Devuelve número de cuenta
+     *
+     * @return numero cuenta
      */
     public String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * Asignamos el número de la cuenta
+     *
+     * @param cuenta Numero de la cuenta del cliente
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
     /**
-     * @return the saldo
+     * Devuelve saldo
+     *
+     * @return saldo cuenta
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * @param saldo the saldo to set
+     * Asigna saldo
+     *
+     * @param saldo ingresado
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     /**
-     * @return the tipoInterés
+     * Devuelve el tipo de ienterés
+     *
+     * @return tipoInterés
      */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
     /**
-     * @param tipoInterés the tipoInterés to set
+     * Asignamos el valor del tipo de interés
+     *
+     * @param tipoInterés Porcentaje a aplicar
      */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;

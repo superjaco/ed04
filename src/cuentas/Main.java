@@ -7,10 +7,13 @@ package cuentas;
 
 /**
  *
- * @Jacobo Adega Rivas
+ * @author Jacobo Adega
  */
 public class Main {
 
+  /**
+  * @param args the command line arguments
+  */
     public static void main(String[] args) {
         CCuenta cuenta1;
         double saldoActual;
